@@ -115,3 +115,5 @@ Calculation validation proves deterministic replay of the receipt only. It does 
 ## CI gate
 
 Do not tag or release v0.2.0 until GitHub Actions `Verify` passes.
+
+CI trigger marker: 2026-05-04T20:56Z
