@@ -111,3 +111,7 @@ bash tests/calculation-fail-closed.test.sh
 ```
 
 Calculation validation proves deterministic replay of the receipt only. It does not upgrade Bell₂ authority, set `ACCEPT_SHARED` to true, or enable propagation.
+
+## CI gate
+
+Do not tag or release v0.2.0 until GitHub Actions `Verify` passes.
