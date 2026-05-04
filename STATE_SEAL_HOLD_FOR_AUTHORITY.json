@@ -1,0 +1,25 @@
+{
+  "product": "Bell₂ Verification Engine",
+  "version": "v0.2.0",
+  "primary_artifact": "STATE_SEAL_HOLD_FOR_AUTHORITY",
+  "current_route": "HOLD_FOR_AUTHORITY",
+  "truth_claim": {
+    "bell2_witness_valid": true,
+    "authority": "UNVERIFIED",
+    "accept_shared": false,
+    "propagation": "BLOCKED",
+    "network_update": "BLOCKED"
+  },
+  "verification_scope": {
+    "local_reproduction": "PASS_REQUIRED",
+    "authority_verified": false,
+    "shared_acceptance": false,
+    "network_movement": false
+  },
+  "publication_boundary": {
+    "claim_final_authority": false,
+    "claim_accept_shared": false,
+    "claim_propagation_enabled": false,
+    "claim_network_update_allowed": false
+  }
+}
