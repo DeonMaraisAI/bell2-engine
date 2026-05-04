@@ -60,7 +60,7 @@ NETWORK_UPDATE: BLOCKED
 ## Fail-closed tests
 
 ```bash
-bash tests/fail_closed.test.sh
+dash tests/fail_closed.test.sh
 ```
 
 Expected result:
@@ -117,3 +117,4 @@ Calculation validation proves deterministic replay of the receipt only. It does 
 Do not tag or release v0.2.0 until GitHub Actions `Verify` passes.
 
 CI trigger marker: 2026-05-04T20:56Z
+PR CI gate marker: 2026-05-04T21:02Z
