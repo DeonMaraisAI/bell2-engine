@@ -3,14 +3,16 @@ name: Verify
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Show verification boundary
+        run: |
+          echo "AUTHORITY=UNVERIFIED"
+          echo "PROPAGATION=BLOCKED"
       - name: Run full verification
         run: npm test
