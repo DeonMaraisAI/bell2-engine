@@ -1,0 +1,5 @@
+CI gate marker for Verify workflow.
+
+Authority remains UNVERIFIED.
+Propagation remains BLOCKED.
+No release or tag is created by this marker.
