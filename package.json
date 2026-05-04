@@ -1,0 +1,18 @@
+{
+  "name": "bell2-engine",
+  "version": "0.2.0",
+  "description": "Bell\u2082 Verification Engine fail-closed HOLD_FOR_AUTHORITY state seal verifier.",
+  "private": false,
+  "scripts": {
+    "test": "npm run ci",
+    "verify": "bash verify/verify.sh",
+    "test:fail-closed": "bash tests/fail_closed.test.sh",
+    "ci": "bash verify/verify.sh && bash tests/fail_closed.test.sh && node scripts/verify-calculation.js receipts/example-calculation.receipt.json && bash tests/calculation-fail-closed.test.sh",
+    "test:calculation": "node scripts/verify-calculation.js receipts/example-calculation.receipt.json",
+    "test:calculation-fail-closed": "bash tests/calculation-fail-closed.test.sh",
+    "verify:state": "bash verify/verify.sh",
+    "test:state-fail-closed": "bash tests/fail_closed.test.sh",
+    "verify:calculation": "node scripts/verify-calculation.js receipts/example-calculation.receipt.json"
+  },
+  "license": "MIT"
+}
