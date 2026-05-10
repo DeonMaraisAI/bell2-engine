@@ -21,6 +21,30 @@ PROPAGATION: BLOCKED
 NETWORK_UPDATE: BLOCKED
 ```
 
+## External replay reports
+
+Independent validators can submit replay evidence here:
+
+```text
+Issue #2: Collect Independent Replay Reports — EXTERNAL_REPLAY_PACKET_RC1
+https://github.com/DeonMaraisAI/bell2-engine/issues/2
+```
+
+Validator command:
+
+```bash
+python verify_system_root.py
+```
+
+Boundary:
+
+```text
+External replay creates evidence.
+Bell₂ compares evidence.
+Only an explicit final gate may promote state.
+ACCEPT_SHARED: FALSE
+PROPAGATION: BLOCKED
+```
 
 ## Full local CI
 
