@@ -1,143 +1,25 @@
-# Bell₂ Verification Engine
+# Local Verification Engine
 
-Bell₂ Verification Engine v0.2.0 publishes an honest fail-closed state seal: witness valid, authority unverified, propagation blocked.
+Small fail-closed verification engine for deterministic local replay tests.
 
-## Current state
+## Purpose
 
-```text
-Product: Bell₂ Verification Engine
-Version: v0.2.0
-Primary artifact: STATE_SEAL_HOLD_FOR_AUTHORITY
-Current route: HOLD_FOR_AUTHORITY
-```
+- replay known inputs
+- compare expected outputs
+- reject mismatches
+- support simple local CI checks
 
-## Public truth claim
+This project is a local test utility only.
 
-```text
-BELL2_WITNESS_VALID: TRUE
-AUTHORITY: UNVERIFIED
-ACCEPT_SHARED: FALSE
-PROPAGATION: BLOCKED
-NETWORK_UPDATE: BLOCKED
-```
+It does not provide:
 
-## External replay reports
+- production approval
+- release approval
+- deployment approval
+- security certification
 
-Independent validators can submit replay evidence here:
+## Security Notice
 
-```text
-Issue #2: Collect Independent Replay Reports — EXTERNAL_REPLAY_PACKET_RC1
-https://github.com/DeonMaraisAI/bell2-engine/issues/2
-```
+No secrets, credentials, private infrastructure, or production workflows are intentionally included in this repository.
 
-Validator command:
-
-```bash
-python verify_system_root.py
-```
-
-Boundary:
-
-```text
-External replay creates evidence.
-Bell₂ compares evidence.
-Only an explicit final gate may promote state.
-ACCEPT_SHARED: FALSE
-PROPAGATION: BLOCKED
-```
-
-## Full local CI
-
-Run the same proof sequence used by GitHub Actions:
-
-```bash
-npm test
-# or
-npm run ci
-```
-
-This verifies:
-
-```text
-state seal replay
-state fail-closed behavior
-calculation receipt replay
-calculation fail-closed behavior
-```
-
-## Verify
-
-```bash
-bash verify/verify.sh
-```
-
-Expected result:
-
-```text
-STATUS: VERIFIED_LOCAL
-AUTHORITY: UNVERIFIED
-ACCEPT_SHARED: FALSE
-PROPAGATION: BLOCKED
-NETWORK_UPDATE: BLOCKED
-```
-
-## Fail-closed tests
-
-```bash
-bash tests/fail_closed.test.sh
-```
-
-Expected result:
-
-```text
-FAIL_CLOSED_TESTS: PASS
-```
-
-## Meaning
-
-This repo proves one narrow thing:
-
-```text
-The current state seal is deterministic, reproducible locally, and fail-closed.
-```
-
-It does not claim:
-
-```text
-AUTHORITY: VERIFIED
-ACCEPT_SHARED: TRUE
-PROPAGATION: ENABLED
-NETWORK_UPDATE: ALLOWED
-```
-
-Truth is not interpreted. Truth is executed.
-
-## Calculation validation
-
-This repository also includes a deterministic calculation receipt verifier.
-
-```bash
-node scripts/verify-calculation.js receipts/example-calculation.receipt.json
-```
-
-Expected output includes:
-
-```text
-CALCULATION: VERIFIED
-AUTHORITY: UNVERIFIED
-PROPAGATION: BLOCKED
-```
-
-Fail-closed calculation tests:
-
-```bash
-bash tests/calculation-fail-closed.test.sh
-```
-
-Calculation validation proves deterministic replay of the receipt only. It does not upgrade Bell₂ authority, set `ACCEPT_SHARED` to true, or enable propagation.
-
-## CI gate
-
-Do not tag or release v0.2.0 until GitHub Actions `Verify` passes.
-
-CI trigger marker: 2026-05-04T20:56Z
+This repository is intended for local verification and testing purposes only. Review all contents independently before use in any environment.
